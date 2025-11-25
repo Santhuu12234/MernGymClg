@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './Contact.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import api from "../axiosConfig";
 
 const warningMessages = [
   "WARNING: Messages are monitored...",
@@ -109,8 +108,9 @@ const Contact = ({ darkMode }) => {
     setShowLoginPrompt(true); // ✅ Show the modal
     return;
   }
+    const BACKEND_URI = "https://gymmern-backend-1.onrender.com/api/contact";
 
-    fetch("/api/contact", {
+    fetch(BACKEND_URI, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

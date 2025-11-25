@@ -3,7 +3,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./AdminDash.css";
-import api from "../axiosConfig";
+
 
 const AdminDash = ({ darkMode }) => {
   const [users, setUsers] = useState([]);
@@ -14,11 +14,12 @@ const AdminDash = ({ darkMode }) => {
   const [activeTab, setActiveTab] = useState("users");
   const [selectedImage, setSelectedImage] = useState(null);
   const [newWarning, setNewWarning] = useState("");
-const [currentWarning, setCurrentWarning] = useState(null);
+  const [currentWarning, setCurrentWarning] = useState(null);
+  const BACKEND_URL = "https://gymmern-backend-1.onrender.com";
 
 const fetchWarning = async () => {
   try {
-    const res = await axios.get("/api/warning");
+    const res = await axios.get("${BACKEND_URL}/api/warning");
     setCurrentWarning(res.data);
   } catch {
     setCurrentWarning(null);
@@ -33,9 +34,9 @@ useEffect(() => {
   const fetchAll = async () => {
     try {
       const [uRes, cRes, bRes] = await Promise.all([
-        axios.get("/api/admin/users"),
-        axios.get("/admin/contacts"),
-        axios.get("/api/admin/bookings")
+        axios.get("${BACKEND_URL}/api/admin/users"),
+        axios.get("${BACKEND_URL}/api/admin/contacts"),
+        axios.get("${BACKEND_URL}/api/admin/bookings")
       ]);
       setUsers(uRes.data);
       setContacts(cRes.data);
@@ -49,7 +50,7 @@ useEffect(() => {
     if (!dateObj) return;
     const formattedDate = dateObj.toDateString();
     try {
-      const res = await axios.get("/api/admin/bookings", {
+      const res = await axios.get("${BACKEND_URL}/api/admin/bookings", {
         params: { date: formattedDate }
       });
       setBookings(res.data);
@@ -262,7 +263,7 @@ useEffect(() => {
       onSubmit={async (e) => {
         e.preventDefault();
         if (!newWarning.trim()) return;
-        await axios.post("/api/warning", { message: newWarning });
+        await axios.post("${BACKEND_URL}/api/warning", { message: newWarning });
         alert("Warning added!");
         setNewWarning("");
         fetchWarning();
@@ -298,7 +299,7 @@ useEffect(() => {
           <button
             
             onClick={async () => {
-              await axios.delete("/api/warning");
+              await axios.delete("${BACKEND_URL}/api/warning");
               setCurrentWarning(null);
               alert("Warning deleted.");
             }}
