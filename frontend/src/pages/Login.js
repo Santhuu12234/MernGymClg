@@ -5,6 +5,7 @@ import axios from 'axios';
 import './AdminLogin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import api from "../axiosConfig";
 
 
 const Login = ({ darkMode }) => {
@@ -80,7 +81,7 @@ const Login = ({ darkMode }) => {
 
   const handleSendOtp = async () => {
     try {
-      const res = await axios.post("${BACKEND_URL}/api/auth/forgot-password", { email });
+      const res = await api.post("/api/auth/forgot-password", { email });
       setMessage(res.data.msg);
       setShowResetFields(true);
     } catch (error) {
@@ -95,11 +96,7 @@ const Login = ({ darkMode }) => {
     }
 
     try {
-      const res = await axios.post("${BACKEND_URL}/api/auth/reset-password", {
-        email,
-        otp,
-        newPassword,
-      });
+      await api.post("/api/auth/reset-password", { email, otp, newPassword });
       alert(res.data.msg);
       setShowResetFields(false);
       setShowForgot(false);
@@ -114,7 +111,7 @@ const Login = ({ darkMode }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("${BACKEND_URL}/api/auth/login", { email, password });
+      const res = await api.post("/api/auth/login", { email, password });
       const userName = res.data.user.name;
       localStorage.setItem("email", email);
       localStorage.setItem("name", userName);
@@ -136,7 +133,7 @@ const Login = ({ darkMode }) => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("${BACKEND_URL}/api/auth/register", { name, email, password });
+      await api.post("/api/auth/register", { name, email, password });
       showCenteredModal(`Welcome, ${name}! Your account has been created.`);
       setName('');
       setEmail('');
