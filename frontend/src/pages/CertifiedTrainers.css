@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
+.trainer-section {
+  font-family: "Poppins", sans-serif;
+  background: #d8d8d8ff;
+  color: #222;
+  transition: 0.4s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.trainer-section.dark {
+  background: #3c3c3c;
+  color: #eee;
+}
+.trainer-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) !important;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px 50px 20px;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+/* HERO SECTION */
+
+@media (max-width: 1024px) {
+  .trainer-hero {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .trainer-hero {
+    height: 40vh;
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.trainer-section.dark .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hero Text with Trade Winds font */
+.hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  font-family: "Trade Winds", cursive;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.4rem;
+}
+
+/* Trainers Grid */
+.trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.trainer-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.trainer-section.dark .trainer-card {
+  background: #1e1e1e;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+}
+
+.trainer-card:hover {
+  transform: translateY(-10px);
+}
+
+.trainer-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.trainer-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.trainer-info h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.trainer-info h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ff5252;
+  margin-bottom: 10px;
+}
+
+.trainer-section.dark .trainer-info h4 {
+  color: #ff7a7a;
+}
+
+.trainer-info p {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.trainer-section.dark .trainer-info p {
+  color: #ccc;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .trainer-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .trainer-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .trainer-info p {
+    font-size: 0.88rem;
+  }
+}

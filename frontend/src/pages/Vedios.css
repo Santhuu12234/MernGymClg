@@ -1,0 +1,167 @@
+/* Main Page Wrapper */
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+.vedios-page {
+  background-color: #222222; /* Consistent background */
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.vedios-title {
+  text-align: center;
+  font-size: 33px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+  font-family: 'Trade Winds', cursive;
+}
+
+/* Filter Bar */
+.vedios-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+/* Filter Label */
+.filter-label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Filter List */
+.vedios-filter-list {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Filter Button */
+.filter-option {
+  background-color: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  width: 140px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active Button */
+.filter-option.active {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Video Grid */
+.vedios-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Video Card */
+.vedios-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 720px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vedios-card:hover {
+  transform: translateY(-6px);
+  
+}
+
+/* Responsive Video (replace iframe with video tag if needed) */
+.vedios-iframe,
+.vedios-video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Caption */
+.vedios-caption {
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+
+/* Level Heading */
+.vedios-level-heading {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 8px;
+  color: #ccc;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900; /* Orbitron Black */
+}
+
+/* Dark Mode Overrides */
+.vedios-page.dark .vedios-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.04);
+}
+
+.vedios-page.dark .vedios-caption {
+  color: #f5f5f5;
+}
+
+.vedios-page.dark .filter-option {
+  background-color: #444;
+  color: #ddd;
+}
+
+.vedios-page.dark .filter-option.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.vedios-page.dark .vedios-iframe,
+.vedios-page.dark .vedios-video {
+  border-bottom: 1px solid #444;
+}
+
+/* Responsive Sizes */
+@media (max-width: 768px) {
+  .vedios-iframe,
+  .vedios-video {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vedios-iframe,
+  .vedios-video {
+    height: 150px;
+  }
+}

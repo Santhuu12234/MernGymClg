@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
+.equipment-page {
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2e2e2;
+  color: #1a1a1a;
+}
+
+.equipment-page.dark {
+  background-color: #222222;
+  color: #f1f1f1;
+}
+
+.equipment-page h1 {
+  font-family: 'Trade Winds', cursive;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  color: inherit;
+  font-size: 33px; /* Default for large screens */
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .equipment-page h1 {
+    font-size: 27px;
+  }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 600px) {
+  .equipment-page h1 {
+    font-size: 22px;
+  }
+}
+.equipment-page .intro {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 auto 30px;
+  max-width: 800px;
+}
+
+.equipment-page .equipment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.equipment-page .equipment-card {
+  display: flex;
+  width: 700px;
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: none;
+}
+
+.equipment-page.dark .equipment-card {
+  background-color: #161616;
+  color: #f1f1f1;
+}
+
+.equipment-page .equipment-img-wrapper {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.equipment-page .equipment-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.equipment-page .equipment-text {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipment-page .equipment-text p {
+  font-size: 12px;
+  font-weight: 520;
+  line-height: 1.5;
+  color: inherit;
+  margin: 0;
+}
+/* Flex layout for full screen (2 per row) */
+/* Flex layout for full screen (2 per row) */
+@media (min-width: 900px) {
+  .equipment-page .equipment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .equipment-page .equipment-card {
+    flex: 0 0 calc(50% - 15px); /* 2 per row */
+  }
+}
+
+/* Flex layout for small/half screen (1 per row, centered) */
+@media (max-width: 899px) {
+  .equipment-page .equipment-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center the card horizontally */
+    gap: 30px;
+  }
+
+  .equipment-page .equipment-card {
+    width: 100%;
+    max-width: 700px; /* so it doesn’t stretch too wide */
+  }
+}
+.equipment-page .equipment-text {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.equipment-page .equipment-text p {
+  font-size: 12px; /* Increased from 12px */
+  font-weight: 600;
+  line-height: 1.6;
+  color: inherit;
+  margin: 0;
+  margin-bottom: 30px; /* Adds space between text and name */
+  flex-grow: 1;
+}
+
+.equipment-page .equipment-title {
+  font-size: 15px; /* Increased from 13px */
+  font-weight: 600;
+  color: #555;
+  text-align: center;
+}
+
+.equipment-page.dark .equipment-title {
+  color: #ccc;
+}

@@ -1,0 +1,179 @@
+/* Applies only when <body class="access-background"> is set */
+body.access-background {
+  background-color: #efefef !important;
+  overflow: hidden !important;
+}
+
+body.access-background.dark {
+  background-color: #222222 !important;
+}
+
+/* Force full screen only in Access */
+.access-page {
+  height: 90vh !important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: background 0.4s ease;
+}
+
+/* Light Mode */
+.access-page.light {
+  color: #111 !important;
+  background-color: transparent !important;
+}
+
+/* Dark Mode */
+.access-page.dark {
+  color: #f5f5f5 !important;
+  background-color: #222222 !important;
+}
+
+/* Centered Access Box */
+.access-page .access-box {
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  border-radius: 16px;
+}
+
+/* Light background for box */
+.access-page .access-box.light {
+  background: #ffffff !important;
+  box-shadow: 0 0 20px 5px rgba(147, 147, 147, 0.25);
+}
+
+/* Dark background for box */
+.access-page .access-box.dark {
+  background: #1c1c1c !important;
+    box-shadow: 0 0 20px 5px rgba(55, 55, 55, 0.25);
+}
+
+/* Title */
+.access-page .access-title {
+  font-size: 1.9rem;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.access-page.dark .access-title {
+  color: #ffffff !important;
+}
+
+/* Subtitle */
+.access-page .access-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* Info Section */
+.access-page .info-card {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.access-page .info-card h2 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  color: #000000;
+}
+
+.access-page.dark .info-card h2 {
+  color: #ffffff;
+}
+
+.access-page .info-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.access-page .info-card li {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.access-page .info-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  top: 0;
+  color: #000000;
+}
+
+.access-page.dark .info-card li::before {
+  color: #ffffff;
+}
+
+/* Button */
+.access-page .join-btn {
+  padding: 12px 30px;
+  font-size: 15px;
+  background: #5f5f5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.access-page .join-btn:hover {
+  background-color: #9b9b9b;
+  transform: scale(1.05);
+}
+
+/* Welcome Text */
+.access-page .welcome-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 15px;
+  color: #000000;
+}
+
+.access-page.dark .welcome-text {
+  color: #ffffff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .access-page .access-box {
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+
+  .access-page .access-title {
+    font-size: 1.6rem;
+  }
+
+  .access-page .access-subtitle {
+    font-size: 0.9rem;
+  }
+}

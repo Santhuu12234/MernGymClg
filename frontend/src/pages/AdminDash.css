@@ -1,0 +1,482 @@
+/* src/pages/AdminDash.css */
+
+.admin-dash-container {
+  padding: 30px;
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Dark mode */
+.admin-dash-container.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Headings only - taller spacing and center */
+.admin-dash-container h1 {
+  line-height: 2.5rem;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  color: inherit;
+  text-align: center;
+}
+
+.admin-dash-container h2 {
+  line-height: 2.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: inherit;
+  text-align: left;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 30px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Tables - Full width and scrollable on mobile */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: inherit;
+  color: inherit;
+  min-width: 600px;
+}
+
+/* Table headers and data */
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+  background-color: inherit;
+  color: inherit;
+  line-height: 1.3rem;
+  word-break: break-word;
+}
+
+/* Light mode table header */
+.admin-table th {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+/* Dark mode table header */
+.dark .admin-table th {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+/* Even rows alternate color */
+.admin-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dark .admin-table tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+/* Error message */
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .admin-dash-container {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .admin-table {
+    min-width: 100%;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 6px 8px;
+  }
+}
+
+/* Scoped button styles */
+/* 🔳 Light Mode Buttons */
+.admin-dash-container button {
+  background-color: #272727;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  min-width: 120px;
+  min-height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-dash-container button:hover {
+  background-color: #3d3d3d;
+}
+
+/* 🌑 Dark Mode Buttons */
+.admin-dash-container.dark button {
+  background-color: #efefef;
+  color: #000000;
+}
+
+.admin-dash-container.dark button:hover {
+  background-color: #bebebe;
+}
+
+/* Tab buttons container centered */
+.admin-tab-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Active tab style */
+.admin-tab-buttons button.active-tab {
+  background-color: #6a6a6a;
+  color: white;
+  font-weight: bold;
+}
+
+/* Dark mode active tab */
+.dark .admin-tab-buttons button.active-tab {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+/* 🌗 Filter Section Container */
+.admin-dash-container .filter-section {
+  color:black;
+  background-color: #e9e9e9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🌑 Dark mode filter section */
+.admin-dash-container.dark .filter-section {
+  background-color: #2b2b2b;
+}
+
+/* Filter section heading */
+.admin-dash-container .filter-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.admin-dash-container.dark .filter-section h2 {
+  color: #eee;
+}
+
+/* 📅 DatePicker input styling - light */
+.admin-dash-container .react-datepicker__input-container input {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 📅 DatePicker input styling - dark */
+.admin-dash-container.dark .react-datepicker__input-container input {
+  background-color: #444444;
+  color: #ffffff;
+  border: 1px solid #777;
+}
+
+/* Focus style */
+.react-datepicker__input-container input:focus {
+  border-color: #565656;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* 📆 DatePicker calendar popup - light */
+.react-datepicker {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
+/* 📆 Calendar header and day names - light */
+.react-datepicker__header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 📆 DatePicker calendar popup - dark */
+.admin-dash-container.dark .react-datepicker {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+/* 📆 Calendar header and day names - dark */
+.admin-dash-container.dark .react-datepicker__header {
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #555;
+}
+
+/* 📆 Day numbers */
+.react-datepicker__day {
+  color: inherit;
+}
+
+/* 🌓 Selected day */
+.react-datepicker__day--selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* 🌓 Selected day - dark */
+.admin-dash-container.dark .react-datepicker__day--selected {
+  background-color: #80c784;
+  color: #000;
+}
+
+/* Remove default "X" clear icon */
+.react-datepicker__close-icon {
+  display: none !important;
+}
+
+/* Calendar arrows uniform */
+.react-datepicker__navigation {
+  background: transparent !important;
+  border: none;
+  outline: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Optional: arrow icon size */
+.react-datepicker__navigation-icon::before {
+  font-size: 1.2rem;
+}
+
+/* Equipment booking block spacing */
+.equipment-booking-block {
+  margin-bottom: 30px;
+}
+/* 🔍 Styled input for search bar – Light Mode */
+.admin-dash-container .search-input {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px auto;
+  display: block;
+}
+
+/* 🔍 Dark mode search bar styling */
+.admin-dash-container.dark .search-input {
+  background-color: #444444;
+  color: #ffffff;
+  border: 1px solid #777;
+}
+
+/* 🔍 Focus styles */
+.admin-dash-container .search-input:focus {
+  border-color: #565656;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+/* QR Image Cards */
+.qr-image-card img {
+  transition: transform 0.3s ease;
+}
+.qr-image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Modal (Fullscreen Zoom Image) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Optional Close Button */
+.modal-overlay button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+textarea {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn.btn-danger {
+  background-color: #e7e7e7;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn.btn-danger:hover {
+  background-color: #282828;
+}
+/* Mobile size adjustments */
+@media (max-width: 700px) {
+  .admin-tab-buttons {
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+  
+  }
+
+  .admin-tab-buttons button {
+    width: 80px !important; /* Smaller width */
+    font-size: 12px !important;
+    padding: 8px !important;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .admin-form button,
+  .btn.btn-danger {
+    
+    display: block;
+  }
+}
+/* ⚠️ Gym Warning Section Styling */
+.admin-dash-container section.warning-section {
+  background-color: #cacaca;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 30px auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.admin-dash-container.dark section.warning-section {
+  background-color: #131313;
+}
+
+/* Heading inside warning */
+.warning-section h2,
+.warning-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+/* Textarea input */
+.warning-section textarea {
+  background-color: #ededed;
+  color: #000;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  resize: vertical;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-dash-container.dark .warning-section textarea {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #9e9e9e;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+/* Current warning box */
+.warning-section .current-warning-box {
+  margin-top: 25px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.admin-dash-container.dark .warning-section .current-warning-box {
+  background-color: #444;
+  color: #eee;
+}
+
+/* Center delete button */
+.warning-section .btn-danger {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+/* Responsive warning section */
+@media (max-width: 600px) {
+  .admin-dash-container section.warning-section {
+    padding: 20px;
+  }
+
+  .warning-section textarea {
+    font-size: 14px;
+  }
+
+  .warning-section h2,
+  .warning-section h3 {
+    font-size: 1.2rem;
+  }
+}

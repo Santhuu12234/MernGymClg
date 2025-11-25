@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
+
+body.services-page {
+  background-color: rgb(233, 233, 233) !important; /* Light mode */
+}
+
+body.services-page.dark {
+  background-color: #1c1c1c !important;   /* Dark mode */
+}
+
+.services-container {
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: #eaeaea;
+  color: #222;
+}
+
+.services-container.dark {
+  background-color: #1c1c1c;
+  color: #ddd;
+}
+
+/* === Title === */
+.services-title {
+  font-family: 'Trade Winds', cursive;
+  font-size: 32px;
+  font-weight: 400; /* Trade Winds has only one weight */
+  color: #222;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #ccc;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+
+
+.services-container.dark .services-title {
+  color: #eee;
+  border-color: #555;
+}
+
+/* === Section Icon === */
+.section-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.services-container.dark .section-icon {
+  color: #ccc;
+}
+
+/* === Grid === */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* === Card === */
+.service-card {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px 20px;
+  width: 280px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-weight: 600;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* === Dark mode card === */
+.services-container.dark .service-card {
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.services-container.dark .service-card:hover {
+  background-color: #353535;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* === Icon inside card === */
+.service-icon {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.services-container.dark .service-icon {
+  color: #ccc;
+}
+
+/* === Text inside card === */
+.service-card h3 {
+  margin-top: 8px;
+  font-weight: 900; /* Orbitron Black */
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.services-container.dark .service-card p {
+  color: #ccc;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .services-title {
+    font-size: 26px;
+  }
+
+  .service-card {
+    width: 100%;
+  }
+}

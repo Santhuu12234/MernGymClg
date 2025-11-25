@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
+.booking-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 20px 80px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #d1d1d1;
+  color: #000000;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.booking-container.dark {
+  background-color: #222222;
+  color: #f0f0f0;
+}
+
+.booking-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400; /* Trade Winds has only one weight */
+  margin-bottom: 30px;
+  font-family: 'Trade Winds', cursive;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.booking-container.dark .booking-title {
+  color: #f0f0f0;
+}
+
+
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.equipment-card {
+  background-color: #fafafa;
+  border-radius: 14px;
+  
+  padding:15px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 240px;
+  overflow: hidden;
+}
+
+.booking-container.dark .equipment-card {
+  background-color: #000000;
+  color: #fff;
+}
+
+.equipment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.equipment-image {
+  width: 242px;
+  height: 242px;
+  object-fit: cover;
+  
+  
+  flex-shrink: 0;
+}
+
+.equipment-details {
+  flex: 1;
+  display: flex;
+  font-weight: 600;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: left;
+}
+
+.equipment-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-align: left;
+  letter-spacing: 1px;
+  font-family: 'Zen Dots', sans-serif;
+  color: #1a1a1a;
+  text-transform: capitalize;
+}
+
+/* 🌙 Dark mode variation */
+.booking-container.dark .equipment-title {
+  color: #f0f0f0;
+}
+
+.equipment-desc {
+  font-size: 13px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+}
+
+.booking-container.dark .equipment-desc {
+  color: #ccc;
+}
+.book-btn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(198, 198, 198, 0.9); /* Slight transparency */
+  color: #000;
+  border: 1px solid rgba(198, 198, 198, 0.9);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: auto;
+  text-align: center;
+}
+
+.book-btn:hover {
+  background-color: rgba(182, 182, 182, 0.9);
+  border: 1px solid rgba(182, 182, 182, 0.9); /* Less transparent on hover */
+  color: #000;
+}
+
+
+
+/* Dark mode variation */
+.booking-container.dark .book-btn {
+  background-color: rgba(149, 149, 149, 0.9);
+  border: 1px solid rgba(149, 149, 149, 0.9);
+  color: #000;
+}
+
+.booking-container.dark .book-btn:hover {
+  background-color: rgb(146, 146, 146);
+}
+
+/* Slot Bar */
+.slot-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.slot-bar.dark {
+  background-color: #2a2a2a;
+  border-top: 1px solid #555;
+}
+
+.slot-bar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: inherit;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.slot-bar-header button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.slot-bar-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.slot-btn {
+  padding: 8px 14px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.slot-btn:hover {
+  background-color: #333;
+}
+
+.slot-btn.booked {
+  background-color: #999;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.slot-bar.dark .slot-btn {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.slot-bar.dark .slot-btn:hover {
+  background-color: #ccc;
+}
+
+.slot-bar.dark .slot-btn.booked {
+  background-color: #666;
+  color: #ddd;
+}
+
+/* Modal Styles */
+.logout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logout-modal {
+  position: relative;
+  background-color: #fff;
+  color: #222;
+  width: 380px;
+  max-width: 90%;
+  border-radius: 6px;
+  padding: 30px 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.logout-modal.dark-mode {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+}
+
+.top-icon-wrapper {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+}
+
+.logout-modal h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.logout-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.yes-btn,
+.no-btn {
+  min-width: 100px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.yes-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.yes-btn:hover {
+  background-color: #222;
+}
+
+.no-btn {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.no-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #bbb;
+}
+
+.logout-modal.dark-mode .no-btn {
+  background-color: #2c2c2c;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.logout-modal.dark-mode .no-btn:hover {
+  background-color: #3a3a3a;
+  border-color: #666;
+}
+/* Fully Booked Button Style */
+.book-btn.fully-booked {
+  background-color: rgb(177, 93, 93) !important;
+  cursor: not-allowed;
+  position: relative;
+  color:black;
+}
+
+/* 🌙 Dark Mode Variation */
+.booking-container.dark .book-btn.fully-booked {
+  background-color: rgba(165, 67, 67, 0.9) !important;
+  border-color: rgba(165, 67, 67, 0.9);
+  color: #000;
+}
+
+.book-btn.fully-booked:hover::after {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+/* Full screen adjustments: center grid with 2 cards per row */
+@media (min-width: 1400px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;        /* Optional: wider space between boxes */
+    row-gap: 30px;
+    max-width: 1280px;        /* Increased width */
+    margin: 0 auto;
+    padding: 0 10px;          /* Reduced side padding to allow more space */
+  }
+}
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  outline: none;
+  background-color: #fff;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode Focus */
+.search-bar:focus {
+  border-color: #000;
+}
+
+/* Dark Mode */
+.booking-container.dark .search-bar {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #eee;
+}
+
+/* Dark Mode Focus */
+.booking-container.dark .search-bar:focus {
+  border-color: #fff;
+}
+
+
+.not-found-text {
+  font-size: 18px;
+  color: #999;
+  text-align: center;
+  margin-top: 30px;
+}
+

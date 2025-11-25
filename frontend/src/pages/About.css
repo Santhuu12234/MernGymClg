@@ -1,0 +1,254 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+.about-page {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.about-page.dark {
+  color: #eee;
+}
+
+/* Section Base Style */
+.about-section {
+  padding: 40px 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  color: inherit;
+  background-color: #e5e5e5;
+}
+
+.about-page.dark .about-section {
+  background-color: #1a1a1a;
+}
+
+.about-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900; /* Orbitron Black */
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid currentColor;
+  padding-bottom: 6px;
+}
+
+/* Icon colors: black in light mode, white in dark mode */
+.about-section h2 .section-icon,
+.about-section li i {
+  color: black;
+}
+
+.about-page.dark .about-section h2 .section-icon,
+.about-page.dark .about-section li i {
+  color: white;
+}
+
+.section-icon {
+  font-size: 20px;
+  color: inherit;
+}
+
+/* Text */
+.about-section p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.about-section:first-of-type {
+  margin-top: 10px;
+}
+
+.about-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+  max-width: 800px;
+}
+
+.about-section li {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Remove old link styling (scoped only to about-page) */
+.about-page a {
+  text-decoration: none;
+}
+
+.about-page a:hover {
+  text-decoration: underline;
+}
+
+/* Background control */
+.about-page.dark .gym-section,
+.about-page.dark .website-section,
+.about-page.dark .booking-section,
+.about-page.dark .owner-section {
+  background-color: #1a1a1a;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.about-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+}
+
+.about-page.dark {
+  background-color: #121212;
+}
+
+/* Logout Modal */
+.logout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logout-modal {
+  position: relative;
+  background-color: #ffffff;
+  color: #222;
+  width: 380px;
+  max-width: 90%;
+  border-radius: 6px;
+  padding: 30px 5px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode modal */
+body.dark-mode .logout-modal {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+}
+
+.top-icon-wrapper {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.top-icon-wrapper:hover {
+  color: #555;
+}
+
+body.dark-mode .top-icon-wrapper {
+  color: #aaa;
+}
+
+body.dark-mode .top-icon-wrapper:hover {
+  color: #ddd;
+}
+
+.logout-modal h3 {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  line-height: 1.6;
+  font-family: 'Segoe UI', 'Inter', 'system-ui', sans-serif;
+  color: inherit;
+  opacity: 0.95;
+  letter-spacing: 0.3px;
+}
+
+.logout-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.yes-btn, .no-btn {
+  min-width: 100px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yes-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.yes-btn:hover {
+  background-color: #222;
+}
+
+/* No = White with black text */
+.no-btn {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+.no-btn:hover {
+  background-color: #f5f5f5 !important;
+  color: #000 !important;
+  border-color: #bbb !important;
+}
+
+/* Dark mode for No button */
+body.dark-mode .no-btn {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+body.dark-mode .no-btn:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+  border-color: #bbb !important;
+}
+
+
+/* ✅ Keep all login-related links blue inside about page only */
+.about-page a[href*="/login"],
+.about-page a[href*="tab=signin"],
+.about-page a[href*="tab=signup"],
+.about-page a[href*="/admin-login"],
+.about-page span[style*="Logout"] {
+  color: #007BFF !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-page a[href*="/login"]:hover,
+.about-page a[href*="tab=signin"]:hover,
+.about-page a[href*="tab=signup"]:hover,
+.about-page a[href*="/admin-login"]:hover,
+.about-page span[style*="Logout"]:hover {
+  text-decoration: underline;
+}

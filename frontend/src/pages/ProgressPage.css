@@ -1,0 +1,226 @@
+/* Wrapper */
+.progress-page-wrapper {
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background-color:  #e3e3e3;
+  color: var(--text-color, #000000);
+}
+.progress-page-wrapper.dark {
+  background-color: #222222;
+  --text-color: #ffffff;
+}
+
+/* Headings */
+.progress-page-wrapper h2,
+.progress-page-wrapper h3 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+  color: inherit;
+}
+
+/* Form Layout */
+.progress-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Input Row */
+.progress-form > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 850px;
+  width: 100%;
+}
+
+/* Inputs */
+.progress-form input {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #999;
+  border-radius: 10px;
+  width: 200px;
+  background-color: #f5f5f5;
+  color: #000;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  -moz-appearance: textfield;
+}
+.progress-form input:focus {
+  border-color: #000;
+  background-color: #eaeaea;
+  outline: none;
+}
+.progress-form input::-webkit-outer-spin-button,
+.progress-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Inputs in dark */
+.dark .progress-form input {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  border: 1px solid #666;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
+}
+.dark .progress-form input:focus {
+  border-color: #fff;
+  background-color: #2c2c2c;
+}
+
+/* Button */
+.progress-form button {
+  margin-top: 10px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.progress-form button:hover {
+  background-color: #333;
+}
+.dark .progress-form button {
+  background-color: #fff;
+  color: #000;
+}
+.dark .progress-form button:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* Table */
+.progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 2px solid #000; /* Outer border in light */
+  border-radius: 10px;
+}
+.dark .progress-table {
+  background-color: #121212;
+  border: 2px solid #fff; /* Outer border in dark */
+}
+.progress-table th,
+.progress-table td {
+  padding: 12px;
+  text-align: center;
+  border: 2px solid #000;
+  background-color: #f9f9f9;
+  color: #000;
+}
+.progress-table th {
+  background-color: #eaeaea;
+}
+.dark .progress-table th,
+.dark .progress-table td {
+  border: 2px solid #fff;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+.dark .progress-table th {
+  background-color: #2c2c2c;
+}
+
+/* Progress Bars */
+.progress-bar-entry {
+  margin-bottom: 20px;
+}
+.progress-bar-entry strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.progress-bar-entry progress {
+  width: 100%;
+  height: 10px;
+  appearance: none;
+  border-radius: 6px;
+  background-color: #ccc;
+}
+.progress-bar-entry progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 6px;
+}
+.progress-bar-entry progress::-webkit-progress-value {
+  background-color: #000;
+  border-radius: 6px;
+}
+.progress-bar-entry progress::-moz-progress-bar {
+  background-color: #000;
+  border-radius: 6px;
+}
+.dark .progress-bar-entry progress {
+  background-color: #444;
+}
+.dark .progress-bar-entry progress::-webkit-progress-bar {
+  background-color: #333;
+}
+.dark .progress-bar-entry progress::-webkit-progress-value {
+  background-color: #fff;
+}
+.dark .progress-bar-entry progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+/* Calendar Filter */
+.date-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 30px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.date-filter-wrapper input[type="date"] {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: #000;
+}
+.dark .date-filter-wrapper input[type="date"] {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #777;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .progress-form > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .progress-form input,
+  .progress-form button {
+    width: 90%;
+  }
+}
+/* Customize calendar icon in light mode */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0); /* Makes it dark (black) */
+}
+
+/* Customize calendar icon in dark mode */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Makes it white */
+}
+
+/* Optional: Add pointer cursor */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}

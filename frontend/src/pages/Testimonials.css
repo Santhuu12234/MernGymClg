@@ -1,0 +1,195 @@
+.testimonials-wrapper {
+  padding: 60px 30px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: #ededed;
+  color: #111;
+  min-height: 100vh;
+
+}
+.testimonials-wrapper.dark {
+  background: #222222;
+  color: #f1f1f1;
+}
+.testimonial-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.testimonial-subtitle {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 40px;
+}
+.testimonial-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.testimonial-box {
+  width: 250px;
+}
+.testimonial-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #04adad;
+  margin-bottom: 10px;
+}
+.testimonial-name-line {
+  margin-bottom: 5px;
+}
+.testimonial-name {
+  font-weight: bold;
+}
+.testimonial-line {
+  height: 2px;
+  width: 60%;
+  background-color: #04adad;
+  margin: 0 auto;
+}
+.testimonial-role {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 10px;
+}
+.testimonial-feedback {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.testimonial-stars {
+  color: #ffc107;
+}
+.testimonial-form {
+  margin-top: 50px;
+  max-width: 400px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.testimonial-form input,
+.testimonial-form textarea {
+  background-color: rgb(227, 227, 227);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.testimonial-form button {
+  padding: 10px;
+  background-color: #464646;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.testimonial-form button:hover {
+  background-color: #505050;
+}
+
+/* 🔥 Dark mode support */
+.testimonials-wrapper.dark .testimonial-form button {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+.testimonials-wrapper.dark .testimonial-form button:hover {
+  background-color: #666;
+}
+.dark-form input,
+.dark-form textarea {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+.give-feedback-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3f3f3f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.give-feedback-btn:hover {
+  background-color: #6c6c6c;
+}
+
+/* 🔥 Dark Mode Support */
+.testimonials-wrapper.dark .give-feedback-btn {
+  background-color: #dfdfdf;
+  color: #000000;
+}
+
+.testimonials-wrapper.dark .give-feedback-btn:hover {
+  background-color: #b3b3b3;
+}
+
+.star-rating-input {
+  font-size: 28px;
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.star-rating-input .star {
+  cursor: pointer;
+  color: #ccc;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.star-rating-input .star.filled {
+  color: #ffb400; /* Play Store gold */
+}
+
+.star-rating-input .star:hover {
+  transform: scale(1.2);
+}
+.custom-file-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.custom-file-input input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  padding: 8px 16px;
+  background-color: #303030;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 🌙 Dark mode */
+.testimonials-wrapper.dark .file-label {
+  background-color: #c4c4c4;
+  color: #000000;
+}
+
+.testimonials-wrapper.dark .file-label:hover {
+  background-color: #777;
+}
+
+.testimonials-wrapper.dark .file-name {
+  color: #ccc;
+}
