@@ -5,7 +5,12 @@ import axios from 'axios';
 import './AdminLogin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import api from "../axiosConfig";
+
+
+// Create axios instance for backend API
+const api = axios.create({
+  baseURL: "https://gymmern-backend-1.onrender.com",
+});
 
 
 const Login = ({ darkMode }) => {
@@ -90,23 +95,30 @@ const Login = ({ darkMode }) => {
   };
 
   const handleResetPassword = async () => {
-    if (newPassword !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+  if (newPassword !== confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+  }
 
-    try {
-      await api.post("/api/auth/reset-password", { email, otp, newPassword });
-      alert(res.data.msg);
-      setShowResetFields(false);
-      setShowForgot(false);
-      setOtp('');
-      setNewPassword('');
-      setConfirmPassword('');
-    } catch (err) {
-      alert(err.response?.data?.msg || "Password reset failed");
-    }
-  };
+  try {
+    const res = await api.post("/api/auth/reset-password", {
+      email,
+      otp,
+      newPassword,
+    });
+
+    alert(res.data.msg);
+
+    setShowResetFields(false);
+    setShowForgot(false);
+    setOtp('');
+    setNewPassword('');
+    setConfirmPassword('');
+  } catch (err) {
+    alert(err.response?.data?.msg || "Password reset failed");
+  }
+};
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
